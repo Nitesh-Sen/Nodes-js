@@ -3,6 +3,16 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo Installing system dependencies
+      - sudo apt update && sudo apt upgrade -y
+      - sudo apt install git -y
+      - curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      - sudo apt-get install -y nodejs
+      - node -v
+      - npm -v
+      - echo Cloning the GitHub repository
+      - git clone https://github.com/AbhishekAbhisharma/Nodes.git
+      - cd Nodes/
       - echo Installing Node.js dependencies
       - npm install
   build:
@@ -12,6 +22,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Starting the application with PM2
+      - sudo npm install -g pm2
+      - pm2 start index.js
 artifacts:
   files:
     - '**/*'
