@@ -27,8 +27,7 @@ phases:
       - pm2 start index.js
 artifacts:
   files:
-    - '**/*'
-  base-directory: build
+    - '/var/www/html/**/*'
 
 
 
