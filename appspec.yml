@@ -1,6 +1,6 @@
 version: 0.0
-os: linux
+os: ubuntu
 files:
   - source: /
-    destination: /var/www/my-nodejs-app/
+    destination: /Nodes
 
