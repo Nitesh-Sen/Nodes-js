@@ -2,5 +2,5 @@ version: 0.0
 os: ubuntu
 files:
   - source: /
-    destination: /Nodes
+    destination: home/ubuntu/Nodes
 
