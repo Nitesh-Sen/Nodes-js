@@ -8,7 +8,7 @@ phases:
       - sudo apt install git -y
       - echo "Installing CodeDeploy agent"
       - sudo apt-get install ruby -y
-      - wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+      - wget https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/install
       - chmod +x ./install
       - sudo ./install auto
       - sudo service codedeploy-agent start
