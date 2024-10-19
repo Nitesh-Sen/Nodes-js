@@ -3,31 +3,34 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing system dependencies
+      - echo "Installing system dependencies"
       - sudo apt update && sudo apt upgrade -y
       - sudo apt install git -y
-      - curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+      - curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
       - sudo apt-get install -y nodejs
       - node -v
       - npm -v
-      - echo Cloning the GitHub repository
+      - echo "Cloning the GitHub repository"
       - git clone https://github.com/AbhishekAbhisharma/Nodes.git
       - cd Nodes/
-      - echo Installing Node.js dependencies
+      - echo "Installing Node.js dependencies"
       - npm install
+
   build:
     commands:
-      - echo Build started on `date`
-      - npm run build
+      - echo "Build started on `date`"
+      
   post_build:
     commands:
-      - echo Build completed on `date`
-      - echo Starting the application with PM2
+      - echo "Build completed on `date`"
+      - echo "Installing PM2 and starting the application"
       - sudo npm install -g pm2
       - pm2 start index.js
+      - pm2 save # Save the PM2 process list
+
 artifacts:
   files:
-    - '/var/www/html/**/*'
+    - '**/*' # Includes all files in the current directory
 
 
 
