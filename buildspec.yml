@@ -6,6 +6,14 @@ phases:
       - echo "Installing system dependencies"
       - sudo apt update && sudo apt upgrade -y
       - sudo apt install git -y
+      - echo "Installing CodeDeploy agent"
+      - sudo apt-get install ruby -y
+      - cd /home/ubuntu
+      - wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+      - chmod +x ./install
+      - sudo ./install auto
+      - sudo service codedeploy-agent start
+      - sudo service codedeploy-agent status
       - curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
       - sudo apt-get install -y nodejs
       - node -v
@@ -31,6 +39,3 @@ phases:
 artifacts:
   files:
     - '**/*' # Includes all files in the current directory
-
-
-
