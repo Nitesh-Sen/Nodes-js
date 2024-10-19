@@ -1,6 +1,5 @@
 version: 0.0
-os: ubuntu
+os: linux
 files:
   - source: /
     destination: /Nodes
-
