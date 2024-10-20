@@ -12,10 +12,6 @@ hooks:
     - location: scripts/install_dependencies.sh  # Yeh script install karega Node.js, PM2, etc.
       timeout: 300
       runas: ubuntu  # Yeh run karega 'ubuntu' user ke through
-  AfterInstall:
-    - location: scripts/after_install.sh  # Isme aap post-installation steps dal sakte hain.
-      timeout: 300
-      runas: ubuntu
   ApplicationStart:
     - location: scripts/start_pm2.sh  # Yeh script aapka application start karega.
       timeout: 300
