@@ -17,6 +17,10 @@ sudo apt-get install -y nodejs
 node -v
 npm -v
 
+# Install PM2 globally
+echo "Installing PM2 globally"
+sudo npm install pm2@latest -g
+
 # Check if the 'Nodes' directory exists and remove it if it does
 if [ -d "/home/ubuntu/Nodes" ]; then
   echo "Removing existing Nodes directory"
@@ -29,3 +33,8 @@ git clone https://github.com/AbhishekAbhisharma/Nodes.git
 cd Nodes/
 echo "Installing Node.js dependencies"
 npm install
+
+# Start the application with PM2
+echo "Starting application with PM2"
+pm2 start index.js --name my-nodejs-app  # Replace index.js with your main application file
+pm2 save  # Save the PM2 process list so it restarts on reboot
