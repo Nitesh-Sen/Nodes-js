@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/Nodes/  # Yeh path hai jahaan aapka project deploy hoga
+    destination: /home/ubuntu/  # Yeh path hai jahaan aapka project deploy hoga
 
 hooks:
   BeforeInstall:
