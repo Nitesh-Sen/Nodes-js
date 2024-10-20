@@ -2,4 +2,22 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /Nodes
+    destination: /home/ubuntu/Nodes  # Yeh path hai jahaan aapka project deploy hoga
+
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh  # Yeh script install karega Node.js, PM2, etc.
+      timeout: 300
+      runas: ubuntu  # Yeh run karega 'ubuntu' user ke through
+  AfterInstall:
+    - location: scripts/after_install.sh  # Isme aap post-installation steps dal sakte hain.
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start_pm2.sh  # Yeh script aapka application start karega.
+      timeout: 300
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/validate_service.sh  # Yeh service validate karega.
+      timeout: 300
+      runas: ubuntu
