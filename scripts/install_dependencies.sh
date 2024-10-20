@@ -17,6 +17,12 @@ sudo apt-get install -y nodejs
 node -v
 npm -v
 
+# Check if the 'Nodes' directory exists and remove it if it does
+if [ -d "/home/ubuntu/Nodes" ]; then
+  echo "Removing existing Nodes directory"
+  rm -rf /home/ubuntu/Nodes
+fi
+
 echo "Cloning the GitHub repository"
 cd /home/ubuntu/
 git clone https://github.com/AbhishekAbhisharma/Nodes.git
