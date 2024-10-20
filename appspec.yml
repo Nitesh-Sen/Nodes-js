@@ -6,6 +6,9 @@ files:
 
 hooks:
   BeforeInstall:
+    - location: scripts/cleanup.sh  # Yeh cleanup script existing files ko remove karega
+      timeout: 300
+      runas: ubuntu
     - location: scripts/install_dependencies.sh  # Yeh script install karega Node.js, PM2, etc.
       timeout: 300
       runas: ubuntu  # Yeh run karega 'ubuntu' user ke through
