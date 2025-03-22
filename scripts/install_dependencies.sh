@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo -i
 echo "Installing system dependencies"
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git ruby
