@@ -1,6 +1,7 @@
 #!/bin/bash
+
 echo "Waiting for the application to start..."
-sleep 10  # Adjust this delay based on your application's startup time
+sleep 10  # Adjust delay based on your application's startup time
 
 # Check if the application is running
 if curl -f http://localhost:3000; then
