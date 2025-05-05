@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <h1>Hello, Nitesh!</h1>
-        <p>Code has been successfully updated 3rd time to added build stage in pipeline and is running smoothly.</p>
+        <p>Code has been successfully updated and is running smoothly. And this comming is for checking end to end automation of pipeline</p>
       </body>
     </html>
   `);
