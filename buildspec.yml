@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "example - install phase"
+  pre_build:
+    commands:
+      - echo "example - pre_build phase"
+  build:
+    commands:
+      - echo "example - build phase"
+  post_build:
+    commands:
+      - echo "example - post_build phase"
+
